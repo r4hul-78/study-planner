@@ -1,0 +1,101 @@
+/* Responsive Styles & Breakpoints */
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .app-header {
+    padding: 0 1rem;
+  }
+
+  .content-body {
+    padding: 1rem;
+  }
+
+  .calendar-grid {
+    display: none; /* Switch to agenda/list view on mobile for clear readability */
+  }
+
+  .calendar-mobile-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .countdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .session-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .availability-day-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .availability-day-label {
+    width: 100%;
+  }
+
+  .time-window-item {
+    flex-wrap: wrap;
+  }
+
+  .chat-bubble {
+    max-width: 90%;
+  }
+
+  .timer-digits {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .calendar-mobile-agenda {
+    display: none;
+  }
+}

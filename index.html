@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyPilot AI - Personalized academic planning assistant that transforms your syllabus, exams, and availability into an intelligent, adaptive study schedule.">
+  <title>StudyPilot AI — Your syllabus. Your strategy. Your success.</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="/src/css/variables.css">
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/layout.css">
+  <link rel="stylesheet" href="/src/css/components.css">
+  <link rel="stylesheet" href="/src/css/pages.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+
+  <!-- Third-party Visualization & Icons (with local fallback safety) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="app-sidebar" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">StudyPilot AI</span>
+          <span class="brand-subtitle">Smart Academic OS</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#/dashboard" class="nav-item active" data-nav="dashboard" id="nav-dashboard">
+          <i data-lucide="layout-dashboard"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#/subjects" class="nav-item" data-nav="subjects" id="nav-subjects">
+          <i data-lucide="book-open"></i>
+          <span>My Subjects</span>
+        </a>
+        <a href="#/planner" class="nav-item" data-nav="planner" id="nav-planner">
+          <i data-lucide="compass"></i>
+          <span>Study Planner</span>
+        </a>
+        <a href="#/calendar" class="nav-item" data-nav="calendar" id="nav-calendar">
+          <i data-lucide="calendar"></i>
+          <span>Calendar</span>
+        </a>
+        <a href="#/analytics" class="nav-item" data-nav="analytics" id="nav-analytics">
+          <i data-lucide="bar-chart-2"></i>
+          <span>Progress & Analytics</span>
+        </a>
+        <a href="#/assistant" class="nav-item" data-nav="assistant" id="nav-assistant">
+          <i data-lucide="sparkles"></i>
+          <span>AI Assistant</span>
+        </a>
+        <a href="#/settings" class="nav-item" data-nav="settings" id="nav-settings">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="profile-card" id="sidebar-profile-card">
+          <div class="profile-avatar" id="sidebar-avatar">SP</div>
+          <div class="profile-info">
+            <div class="profile-name" id="sidebar-student-name">Student Pilot</div>
+            <div class="profile-meta" id="sidebar-academic-level">Undergraduate</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="page-title-group">
+            <h1 id="page-heading">Dashboard</h1>
+            <div class="page-subtitle" id="page-subheading">Welcome back to your study cockpit</div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="btn btn-secondary btn-sm" id="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+            <i data-lucide="sun" id="theme-icon"></i>
+          </button>
+          <button class="btn btn-primary btn-sm" id="btn-quick-plan">
+            <i data-lucide="sparkles"></i>
+            <span>Generate Plan</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Container -->
+      <div class="content-body" id="app-view">
+        <!-- Rendered by SPA Router -->
+        <div class="empty-state">
+          <div class="spinner"></div>
+          <p>Loading StudyPilot AI...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Dynamic Modal Overlay Container -->
+  <div id="modal-container"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Entry Point -->
+  <script type="module" src="/src/js/app.js"></script>
+</body>
+</html>
